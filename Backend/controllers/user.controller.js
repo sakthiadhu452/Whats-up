@@ -1,11 +1,13 @@
 import User from "../models/user.model.js";
-import { loginUser } from "./auth.controller";
+
 
 export const getUsersForSideBar = async (req,res) =>{
     try{
         const loggedInUserId = req.user._id;
         
-        const allUsers = await User.find({_id:{$ne:loggedInUserId}})
+        const filteredUsers = await User.find({_id:{$ne:loggedInUserId}}).select("-password");
+
+        res.status(200).json(filteredUsers);
 
     }
     catch(err){

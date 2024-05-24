@@ -1,0 +1,12 @@
+.Msg-Input{
+    position: sticky;
+    bottom: 0;
+}
+
+.Send-Btn{
+    background-color: black;
+    width: 90px;
+    height: 30px;
+    border-radius: 20px;
+    
+}

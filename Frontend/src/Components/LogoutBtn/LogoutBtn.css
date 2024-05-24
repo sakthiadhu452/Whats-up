@@ -1,0 +1,9 @@
+.LogoutBtn{
+    padding: 10px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.261);
+    border-radius: 40px;
+    width: 80px;
+    /* opacity: 20%; */
+    font-size: 20px;
+}

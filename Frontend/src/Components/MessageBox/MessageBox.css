@@ -1,0 +1,10 @@
+.Messagebox-Main{
+    background-color: rgba(240, 255, 255, 0.279);
+    color: white;
+    padding: 20px;
+    min-width: 400px;
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    max-height: 500px;
+}

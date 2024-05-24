@@ -1,0 +1,19 @@
+
+
+.flex-container{
+    display: flex;
+    padding: 10px;
+    color: white;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(240, 255, 255, 0.279);
+    margin: 2px;
+    width: 100%;
+}
+.flex-container:hover{
+    background-color: rgba(240, 255, 255, 0.604);
+}
+.avatar{
+    max-width: 50px;
+    max-height: 50px;
+}
