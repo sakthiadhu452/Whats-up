@@ -4,6 +4,7 @@ import bcryptjs from "bcrypt"
 export const loginUser= async (req,res)=>{
    try{
         const {username,password}=req.body;
+        // console.log(req.body)
         const user = await User.findOne({username});
         const isPasswordCorrect= await bcryptjs.compare(password?password:"",user.password?user.password:"");
         if(!user || !isPasswordCorrect){

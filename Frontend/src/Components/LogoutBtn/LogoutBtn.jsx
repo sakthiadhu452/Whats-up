@@ -1,9 +1,13 @@
 import React from 'react'
 import './LogoutBtn.css'
 import { CiLogout } from "react-icons/ci";
+import UseLogOut from '../../Hooks/UseLogOut';
 const LogoutBtn = () => {
+const {loading,logout} = UseLogOut()
+
+
   return (
-    <div className='LogoutBtn'>
+    <div className='LogoutBtn' onClick={logout}>
       <CiLogout />
     </div>
   )

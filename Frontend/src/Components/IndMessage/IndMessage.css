@@ -7,6 +7,9 @@
     background-color: black;
     padding: 10px;
     border-radius: 20px;
+    left:0;
+    align-self: flex-start;
+    justify-self: flex-start;
 }
 .Ind-Message p{
     order: 1;

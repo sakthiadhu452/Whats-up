@@ -28,7 +28,7 @@ export const sendMessage = async (req, res) => {
     }
     //socket
     await Promise.all([newMessage.save(), conversation.save()]);
-
+    // console.log(newMessage);
     res.status(200).send({ message: newMessage });
   } catch (err) {
     console.error("Error from sending message:", err);
@@ -40,6 +40,7 @@ export const sendMessage = async (req, res) => {
 export const getMessages = async (req,res)=>{
   try{
     const {id:userTochatId}=req.params;
+    // console.log("kds")
 
     const senderId = req.user._id;
 
@@ -49,7 +50,7 @@ export const getMessages = async (req,res)=>{
     if(!conversation) return res.status(200).json([]);
 
     const messages = conversation.messages;
-
+    
     res.status(200).json(messages);
   }
   catch (err) {

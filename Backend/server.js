@@ -9,7 +9,7 @@ import userRoutes from './Routes/user.routes.js'
 
 
 const app = express();
-dotenv.config({path:"../.env"});
+dotenv.config();
 const port =process.env.PORT || 4000;
 app.use(express.json());
 app.use(cookieParser());

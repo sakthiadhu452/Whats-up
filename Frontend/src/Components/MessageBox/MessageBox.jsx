@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import './MessageBox.css';
 import Message from '../Messages/Message';
 import MessageInput from '../MessageInput/MessageInput';
+import useConversation from '../../zustand/useConversation';
 
 const MessageBox = () => {
-  const NoChatSelected = false;
+  const {selectedConversation,setselectedConversation}= useConversation()
+  //cleanup function unmount
+  useEffect(()=>{
+    return ()=>setselectedConversation(null);
+  },[])
 
   return (
     <div className='Messagebox-Main'>
-      {NoChatSelected ? (
+      {!selectedConversation ? (
         <NoChatSelectedCmp />
       ) : (
         <div >
           <div>
-            TO: <span>Surya</span>
+            TO: <span>{selectedConversation.fullName}</span>
           </div>
           <Message />
           <MessageInput />

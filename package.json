@@ -4,9 +4,10 @@
   "description": "This is a real time chat app created using web sockets",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "server": "node backend/server.js"
   },
-  "type":"module",
+  "type": "module",
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -16,6 +17,7 @@
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.5",
-    "socket.io": "^4.7.5"
+    "socket.io": "^4.7.5",
+    "zustand": "^4.5.2"
   }
 }
