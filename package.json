@@ -3,11 +3,14 @@
   "version": "1.0.0",
   "description": "This is a real time chat app created using web sockets",
   "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "server": "node server.js",
-    "build": "npm install && cd Frontend/npm install  && cd Frontend/npm run build"
-  },
+  
+    "scripts": {
+      "start": "node server.js",
+      "server": "node server.js",
+      "build": "npm install && cd Frontend && npm install && npm run build"
+    }
+  
+  ,
   "type": "module",
   "author": "",
   "license": "ISC",
