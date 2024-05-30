@@ -1,6 +1,6 @@
 import generateJwtTokenAndSetCookie from "../utils/generatetoken.js";
 import User from "../models/user.model.js" ;
-import bcryptjs from "bcrypt"
+import bcryptjs from "bcryptjs"
 export const loginUser= async (req,res)=>{
    try{
         const {username,password}=req.body;
