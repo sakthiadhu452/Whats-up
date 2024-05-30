@@ -10,7 +10,7 @@ const IndMessage = ({key,message}) => {
   const {authUser} = useAuthContext()
    const userId= authUser._id;
    const {selectedConversation} = useConversation();
-   console.log(authUser,selectedConversation)
+  //  console.log(authUser,selectedConversation)
   return (
 <div className={`Ind-Message ${userId === message[0].senderId ? 'Chat-End' : 'Chat-Start'}`}>
         <div >

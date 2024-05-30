@@ -7,9 +7,9 @@ import useGetConversation from '../../Hooks/useGetConversation'
 
 const Sidebar = () => {
  const {loading,conversation} =useGetConversation()
- 
   return (
     <div className='Sidebar-Main'>
+      <SearchInput/>
         {conversation.map((conversation)=>(
           <Conversation
           key={conversation._id} 

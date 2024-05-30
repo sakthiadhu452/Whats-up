@@ -17,3 +17,11 @@
     max-width: 50px;
     max-height: 50px;
 }
+
+.online{
+    background-color: green;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    
+}

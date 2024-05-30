@@ -30,7 +30,11 @@ const useGetConversation = () => {
         getConversations()
     },[])
 
-    return {loading,conversation}
+    function updateConversation(content){
+        setconversation(content);
+        console.log(conversation)
+    }
+    return {loading,conversation,updateConversation}
 }
 
 export default useGetConversation
