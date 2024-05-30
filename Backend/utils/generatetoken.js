@@ -1,5 +1,5 @@
 import jwt from 'jsonwebtoken'
-import { generate } from 'otp-generator'
+
 
 
 const generateJwtTokenAndSetCookie = (userId,res)=>{
@@ -11,7 +11,7 @@ const generateJwtTokenAndSetCookie = (userId,res)=>{
         maxAge: 15*24*60*60*1000,//MS
         httpOnly:true, //prevent XSS attacks
         sameSite:"strict",
-        secure:process.env.MODE_ENV !== "development" //prevent CSRF attck
+        secure:process.env.MODE_ENV !== "production" //prevent CSRF attck
     })
 }
 
