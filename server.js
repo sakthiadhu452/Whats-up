@@ -46,7 +46,7 @@ function getDirectories(source) {
 const currentDir = process.cwd();
 
 // Get directories in the current directory
-const directories = getDirectories(currentDir);
+const directories = getDirectories(currentDir+"/Frontend");
 
 // Print the directories
 console.log('Directories in the current directory:');
