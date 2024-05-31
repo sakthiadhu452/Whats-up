@@ -13,7 +13,7 @@ const IndMessage = ({key,message}) => {
   //  console.log(authUser,selectedConversation)
   return (
 <div className={`Ind-Message ${userId === message[0].senderId ? 'Chat-End' : 'Chat-Start'}`}>
-        <div >
+        <div  >
             <p style={{marginBottom:"0px"}} >{message[0].message}</p>
             <img src={userId === message[0].senderId ? authUser.profilePic : selectedConversation.profilepic} className='avatarMsg' alt="" />
         </div>

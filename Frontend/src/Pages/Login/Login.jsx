@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Login.css'
 import { Link } from 'react-router-dom'
 import UseLogin from '../../Hooks/UseLogin.js'
+import { AiOutlineLoading } from "react-icons/ai";
 
 const Login = () => {
   const [Username,setUsername]= useState("");
@@ -26,7 +27,10 @@ const Login = () => {
         <Link to="/signup">
             {"Don't"} have an account?
         </Link>
-        <button type="submit" class="btn btn-info">Login</button>
+        <button type="submit" className="btn btn-info btn-login" style={{ marginLeft: "0px" }}>
+            {loading ? <AiOutlineLoading className="loading" /> : "Login"}
+        </button>
+        
     </div>
 
     </form>

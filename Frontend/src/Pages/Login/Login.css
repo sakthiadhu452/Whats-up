@@ -14,3 +14,7 @@
 .Login-Container *{
     padding: 5px;
 }
+
+.btn-login{
+    width: 100%;
+}

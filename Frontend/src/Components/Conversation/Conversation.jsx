@@ -13,7 +13,7 @@ const Conversation = ({conversation,emoji}) => {
   const isOnline = onlineUsers.includes(conversation._id)
 
   return (
-    <div className='Main-Container' onClick={()=>setselectedConversation(conversation)} style={isSelected ? { backgroundColor: "blue" } : null}>
+    <div className='Main-Container' onClick={()=>setselectedConversation(conversation)} style={isSelected ? { backgroundColor: "rgba(240, 255, 255, 0.604)" } : null}>
       <div className='flex-container'>
         <img src={conversation.profilepic} className='avatar' alt='avatar-icon' />
         <p>{conversation.fullName}</p>

@@ -13,3 +13,8 @@
 .Signup-Container *{
     padding: 5px;
 }
+
+.btn-submit{
+    width: 100% !important;
+    margin-left: 0px !important;
+}

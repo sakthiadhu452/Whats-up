@@ -1,8 +1,14 @@
 .Msg-Input{
+    align-self: flex-end;
     position: sticky;
     bottom: 0;
 }
 
+.MsgInp{
+    position: sticky;
+    bottom: 0;
+    align-self: flex-end;
+}
 .Send-Btn{
     background-color: black;
     width: 90px;
@@ -10,3 +16,4 @@
     border-radius: 20px;
     
 }
+

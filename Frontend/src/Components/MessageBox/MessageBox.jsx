@@ -3,6 +3,7 @@ import './MessageBox.css';
 import Message from '../Messages/Message';
 import MessageInput from '../MessageInput/MessageInput';
 import useConversation from '../../zustand/useConversation';
+import { FaAngleLeft } from "react-icons/fa6";
 
 const MessageBox = () => {
   const {selectedConversation,setselectedConversation}= useConversation()
@@ -12,17 +13,21 @@ const MessageBox = () => {
   },[])
 
   return (
-    <div className='Messagebox-Main'>
+<div className={`Messagebox-Main ${selectedConversation ? 'viewOn' : ''}`}>
+      {selectedConversation ? <FaAngleLeft  className="MesgBackBtn" onClick={()=>{setselectedConversation(null)}} /> : null}
       {!selectedConversation ? (
         <NoChatSelectedCmp />
-      ) : (
-        <div >
+      ) : (<div style={{height:"100%"}}>
+      
+      
+        <div style={{display:"flex",flexDirection:"column",position:"relative"}} >
           <div>
             TO: <span>{selectedConversation.fullName}</span>
           </div>
           <Message />
           <MessageInput />
         </div>
+      </div>
       )}
     </div>
   );

@@ -4,6 +4,8 @@ import './GenderCheckbox.jsx'
 import GenderCheckbox from './GenderCheckbox.jsx'
 import { Link } from 'react-router-dom'
 import useSignup from '../../Hooks/useSignup.js'
+import { AiOutlineLoading } from "react-icons/ai";
+
 const Signup = () => {
 
 const [inputs,setInputs]= useState({
@@ -43,7 +45,9 @@ const handleSubmit=async (e)=>{
             Already have an account?
         </Link>
 
-        <button  type="submit" style={{width:'100px'}} class="btn btn-info"  >Signup</button>
+        <button  type="submit" style={{width:'100px'}} class="btn btn-info btn-submit"  >
+        {loading ? <AiOutlineLoading className="loading" /> : "Signup"}
+        </button>
     </div>
 
     </form>

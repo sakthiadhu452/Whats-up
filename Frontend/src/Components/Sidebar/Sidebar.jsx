@@ -4,11 +4,13 @@ import SearchInput from '../SearchInput/SearchInput.jsx'
 import Conversation from '../Conversation/Conversation.jsx'
 import LogoutBtn from '../LogoutBtn/LogoutBtn.jsx'
 import useGetConversation from '../../Hooks/useGetConversation'
+import useConversation from '../../zustand/useConversation.js'
 
 const Sidebar = () => {
  const {loading,conversation} =useGetConversation()
+ const {selectedConversation} = useConversation();
   return (
-    <div className='Sidebar-Main'>
+    <div className={`Sidebar-Main ${selectedConversation ? 'setsidebaroff':"" }`}>
       <SearchInput/>
         {conversation.map((conversation)=>(
           <Conversation

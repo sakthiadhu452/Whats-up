@@ -4,7 +4,27 @@
     padding: 20px;
     min-width: 400px;
     display: flex;
+    min-height: 90vh;
     overflow: auto;
+    position: relative;
     flex-direction: column;
-    max-height: 500px;
+    max-height: 90vh;
+}
+
+.MesgBackBtn{
+    position: sticky;
+    top:0;
+}
+
+@media (max-width:840px) {
+    .Messagebox-Main{
+        display: none;
+    }
+
+    .viewOn{
+        display: flex;
+    }
+    
+
+ 
 }

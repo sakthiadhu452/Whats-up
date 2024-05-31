@@ -4,6 +4,9 @@ import IndMessage from '../IndMessage/IndMessage';
 import useGetMessages from '../../Hooks/useGetMessages';
 import useListenMessages from '../../Hooks/useListenMessages';
 
+
+
+
 const Message = () => {
   const { messages, loading } = useGetMessages();
   useListenMessages()
@@ -19,9 +22,9 @@ const Message = () => {
         <>No mess!</>
       ) : (
         messages.map((message) => (
-          <div key={message._id} ref={LastmessageRef}>
+          <span key={message._id} ref={LastmessageRef}>
             <IndMessage message={[message]} />
-          </div>
+          </span>
         ))
       )}
     </div>

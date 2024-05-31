@@ -1,6 +1,10 @@
 
 .flex-con{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position:sticky;
+    top:0;
 }
 
 button{
@@ -10,5 +14,5 @@ button{
     width: 50px;
     border-radius: 40%;
     font-size: 20px;
-    margin: 0px 20px;
+    margin: 0px 0px 0px 20px;
 }

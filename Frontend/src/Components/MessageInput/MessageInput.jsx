@@ -16,7 +16,7 @@ const MessageInput = () => {
   }
   return (
     <div className='Msg-Input' >
-      <form action="" onClick={handleSubmit} style={{display:'flex'}}>
+      <form action="" onClick={handleSubmit} className='MsgInp' style={{display:'flex'}}>
 
       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Message..." value={message} onChange={(e)=>setmessage(e.target.value)}></input>
     <button type='submit'>
