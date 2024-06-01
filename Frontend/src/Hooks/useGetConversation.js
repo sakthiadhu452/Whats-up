@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
-
+import { useEffect, useState ,useRef} from "react"
+// import { toast } from "react-toastify"; 
 
 const useGetConversation = () => {
     const [loading,setloading] = useState([])
     const [conversation,setconversation] = useState([])
-
+    const conversationPromise = useRef(null);
     useEffect (()=>{
         const getConversations = async () =>{
             setloading (true);
@@ -18,10 +18,11 @@ const useGetConversation = () => {
 
                 }
                 setconversation(data)
+                conversationPromise.current = Promise.resolve(data); 
             }
             catch(error){
-              
-                toast.error(error.message)
+                
+                conversationPromise.current = Promise.reject(error); 
             }
             finally{
                 setloading(false)
@@ -34,7 +35,7 @@ const useGetConversation = () => {
         setconversation(content);
         console.log(conversation)
     }
-    return {loading,conversation,updateConversation}
+    return {loading,conversation,updateConversation,conversationPromise: conversationPromise.current }
 }
 
 export default useGetConversation

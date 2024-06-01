@@ -69,7 +69,7 @@ const NovideoCmp = ({ selectedConversation,setselectedConversation, videoCall })
                 />
               </span>
             </div>
-
+                    
             <Message />
             <MessageInput />
           </div>

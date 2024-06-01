@@ -1,0 +1,57 @@
+.Call-Main{
+    position: absolute;
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%,50%);
+    top:5%;
+    left: 50%;
+    padding: 20px;
+}
+.Call-Main .Name{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    flex-shrink: 0;
+}
+
+.AttendBtn{
+    background-color: rgba(0, 128, 0, 0.798);
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0px 30px;
+}
+
+.DeclineBtn{
+    background-color: rgb(128, 0, 0.798);
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 10px;
+    
+}
+
+
+.AttendBtn:hover{
+    background-color: green;
+}
+
+.DeclineBtn:hover{
+    background-color: red;
+}
+
+.AttendBtn ,.DeclineBtn {
+    cursor: pointer;
+}
+
+@media (max-width:620px) {
+    .Call-Main{
+        width: 80%;
+    }
+}
+
+@media (max-width:350px) {
+    .Call-Main .Name{
+        flex-shrink: 1;
+    }
+}

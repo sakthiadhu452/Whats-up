@@ -1,8 +1,11 @@
 .myVideo-Main{
     max-width: 100px;
     max-height: 50px;
-    position: relative;
+    position: absolute;
     background-color: black;
+    margin-top: 10px;
+    margin-left: 10px;
+    z-index: 1;
 }
 
 .myVideo-Sub{
