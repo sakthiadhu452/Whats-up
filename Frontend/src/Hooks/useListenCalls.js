@@ -1,8 +1,11 @@
 import { useEffect, useState, useCallback } from "react";
 import { useSocketContext } from "../Context/SocketContext";
 import useGetConversation from "./useGetConversation";
+import useConversation from "../zustand/useConversation";
 
 const useListenCalls = () => {
+  const { setselectedConversation } = useConversation();
+
   const { socket } = useSocketContext();
   const { conversation, conversationPromise } = useGetConversation();
   const [newCall, setnewCall] = useState(false);
@@ -10,13 +13,13 @@ const useListenCalls = () => {
   const [decCall, setdecCall] = useState(false);
   const [callerName, setCallerName] = useState("");
   const [videoCmpConnect, setVideoCmpConnect] = useState(false);
-   
+  var caller;
   useEffect(() => {
     const handleNewCall = async (data) => {
       try {
         await conversationPromise;
-        const caller = conversation.find((conv) => conv._id === data.from);
-        alert(caller)
+        caller = conversation.find((conv) => conv._id === data.from);
+
         if (caller) {
           setCallerName(caller.fullName);
           setnewCall(true);
@@ -29,7 +32,7 @@ const useListenCalls = () => {
     };
 
     const handleCallAccepted = () => {
-        
+      setselectedConversation(caller);
       setVideoCmpConnect(true);
     };
 

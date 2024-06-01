@@ -6,9 +6,13 @@ import useConversation from "../../zustand/useConversation";
 import { FaAngleLeft } from "react-icons/fa6";
 import { MdOutlineVideoCall } from "react-icons/md";
 import Video from "../Video/Video";
+import useListenCalls from "../../Hooks/useListenCalls";
 
 const MessageBox = () => {
-  const [videoCall, setvideoCall] = useState(false);
+
+  const  {videoCmpConnect,setVideoCmpConnect} =useListenCalls();
+  var videoCall= videoCmpConnect;
+  var setvideoCall = setVideoCmpConnect;
   const { selectedConversation, setselectedConversation } = useConversation();
   //cleanup function unmount
   useEffect(() => {

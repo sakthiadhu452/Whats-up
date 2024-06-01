@@ -11,11 +11,9 @@ const Video = ({videoCall,setvideoCall}) => {
   
   return (
     <div style={{height:"100%",width:"100%"}}>
-      {selectedConversation ? <MdCallEnd className='decline-Btn' onClick={()=>{setvideoCall(null)}} /> : null}
+      {selectedConversation ? <MdCallEnd className='decline-Btn' onClick={()=>{setvideoCall(false)}} /> : null}
       <MyVideo videoCall={videoCall} />
       <OtherVideo/>
-
-
     </div>
   )
 }

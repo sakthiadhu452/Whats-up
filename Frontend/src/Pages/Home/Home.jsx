@@ -5,10 +5,12 @@ import Call from '../../Components/Call/Call.jsx'
 import './Home.css'
 import useListenCalls from '../../Hooks/useListenCalls.js'
 
+import Video from '../../components/Video/Video.jsx'
+
 const Home = () => {
  
 
-   const {newCall,ansCall,decCall,setansCall,setdecCall,callerName} = useListenCalls()
+   const {newCall,ansCall,decCall,setansCall,setdecCall,callerName,videoCmpConnect} = useListenCalls()
    
   return (
     <div className='Home-Container'>
