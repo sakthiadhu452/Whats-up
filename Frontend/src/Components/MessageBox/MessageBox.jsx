@@ -4,6 +4,7 @@ import Message from '../Messages/Message';
 import MessageInput from '../MessageInput/MessageInput';
 import useConversation from '../../zustand/useConversation';
 import { FaAngleLeft } from "react-icons/fa6";
+import { MdOutlineVideoCall } from "react-icons/md";
 
 const MessageBox = () => {
   const {selectedConversation,setselectedConversation}= useConversation()
@@ -14,16 +15,19 @@ const MessageBox = () => {
 
   return (
 <div className={`Messagebox-Main ${selectedConversation ? 'viewOn' : ''}`}>
-      {selectedConversation ? <FaAngleLeft  className="MesgBackBtn" onClick={()=>{setselectedConversation(null)}} /> : null}
+      {/* {selectedConversation ? <FaAngleLeft  className="MesgBackBtn" onClick={()=>{setselectedConversation(null)}} /> : null} */}
       {!selectedConversation ? (
         <NoChatSelectedCmp />
       ) : (<div style={{height:"100%"}}>
       
       
         <div style={{display:"flex",flexDirection:"column",position:"relative"}} >
-          <div>
-            TO: <span>{selectedConversation.fullName}</span>
+          <div style={{display:"flex",justifyContent:"space-between"}}>
+          {selectedConversation ? <FaAngleLeft  className="MesgBackBtn" onClick={()=>{setselectedConversation(null)}} /> : null}
+             <span>TO:{selectedConversation.fullName}</span>
+            <span><MdOutlineVideoCall style={{fontSize:"30px",cursor:"pointer"}} /></span>
           </div>
+
           <Message />
           <MessageInput />
         </div>

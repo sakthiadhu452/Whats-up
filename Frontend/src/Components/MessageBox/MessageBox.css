@@ -13,6 +13,7 @@
 
 .MesgBackBtn{
     position: sticky;
+    cursor: pointer;
     top:0;
 }
 
