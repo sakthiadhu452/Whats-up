@@ -5,6 +5,7 @@ import connectToMongodb from "./Backend/DB/connectToMongoDb.js";
 import cookieParser from "cookie-parser";
 import messageRoutes from './Backend/Routes/message.routes.js';
 import userRoutes from './Backend/Routes/user.routes.js';
+import videoRoutes from './Backend/Routes/videoRoutes.js'
 import { app, server } from "./Backend/socket/socket.js";
 import path from 'path';
 import { lstatSync, readdirSync } from 'fs';
@@ -21,6 +22,8 @@ app.use(cookieParser());
 app.use('/api/auth', authRoutes);
 app.use('/api/messages', messageRoutes);
 app.use('/api/users', userRoutes);
+app.use('/api/videocall',videoRoutes);
+
 
 // Serve static files
 const __dirname = path.resolve();
@@ -30,29 +33,6 @@ app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "Frontend", "dist", "index.html"));
 });
 
-// Function to check if a file is a directory
-function isDirectory(source) {
-    return lstatSync(source).isDirectory();
-}
-
-// Function to get directories in the current directory
-function getDirectories(source) {
-    return readdirSync(source)
-        .map(name => path.join(source, name))
-        .filter(isDirectory);
-}
-
-// Get the current directory
-const currentDir = process.cwd();
-
-// Get directories in the current directory
-const directories = getDirectories(currentDir+"/Frontend");
-
-// Print the directories
-console.log('Directories in the current directory:');
-directories.forEach(dir => {
-    console.log(dir);
-});
 
 // Start server and connect to MongoDB
 server.listen(port, () => {
